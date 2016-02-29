@@ -1,0 +1,42 @@
+// Mixins :: Breakpoints
+
+// Basic breakpoints
+.composer-media-breakpoint-xs(@rules) {
+  @media (max-width: 543px) {
+    @rules();
+  }
+}
+
+.composer-media-breakpoint-sm(@rules) {
+  @media (min-width: 544px) {
+    @rules();
+  }
+}
+
+.composer-media-breakpoint-md(@rules) {
+  @media (min-width: 768px) {
+    @rules();
+  }
+}
+
+.composer-media-breakpoint-lg(@rules) {
+  @media (min-width: 992px) {
+    @rules();
+  }
+}
+
+.composer-media-breakpoint-xl(@rules) {
+  @media (min-width: 1200px) {
+    @rules();
+  }
+}
+
+
+// Advanced breakpoints
+.composer-each-breakpoint(@rules) {
+  @rules();
+  .composer-media-breakpoint-sm(@rules);
+  .composer-media-breakpoint-md(@rules);
+  .composer-media-breakpoint-lg(@rules);
+  .composer-media-breakpoint-xl(@rules);
+}
